@@ -12,11 +12,11 @@ Automatic resizing images on output, not on upload. Method checks if the image w
 
 ### Usage
 
-`EasyImage::resizeImage($relativePath, $width, $height)`
+`EasyImage::resize($relativePath, $width, $height)`
 
 ### Example
 
-`<img src="<?php echo EasyImage::resizeImage('images/logo.png', 200, 200) ?>" />`
+`<img src="<?php echo EasyImage::resize('images/logo.png', 200, 200) ?>" />`
 
 returns
 
