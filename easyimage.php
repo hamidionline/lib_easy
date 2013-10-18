@@ -23,10 +23,10 @@ Class EasyImage
 	/*
 	*	Method for autogeneratin resized images.
 	*
-	*	Example usage: EasyImage::getImage($item->image, 200, 200);
+	*	Example usage: EasyImage::resizeImage($item->image, 200, 200);
 	*
 	*/
-    static function getImage($relativePath, $width = null, $height = null)
+    static function resizeImage($relativePath, $width = null, $height = null)
     {
     	$absolutPath = JPath::clean(JPATH_ROOT.'/'.$relativePath);
 
