@@ -29,6 +29,7 @@ Class EasyImage
 	*	@param 	int 	width
 	*	@param 	int 	height
 	*	@return string 	relative path to resized image
+	*	@since 	1.0.0
 	*/
     static function resize($relativePath, $width = null, $height = null)
     {

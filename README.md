@@ -4,20 +4,15 @@ Easy Library
 Joomla library with useful PHP classes founded by [EasyJoomla.org](http://www.easyjoomla.org/).
 
 
-Images
+Image
 ------
-Import: `jimport('easy.image');`
+**Import:** `jimport('easy.image');`
 
-Automatic resizing images on output, not on upload. Method checks if the image was already resized and decides if it is necesary to resize it or not. Source image stays the same.
+### Resize
+Automatic image resizing. Method checks if the image was already resized and decides if it is necesary to resize it or just read already resized image. Source image stays the same. Thunbnail will be stored in the same folder as original.
 
-### Usage
+**Usage:** `echo EasyImage::resize($relativePath, $width, $height);`
 
-`EasyImage::resize($relativePath, $width, $height)`
+**Example:** `<img src="<?php echo EasyImage::resize('images/logo.png', 200, 200) ?>" />`
 
-### Example
-
-`<img src="<?php echo EasyImage::resize('images/logo.png', 200, 200) ?>" />`
-
-returns
-
-`<img src="images/logo_w200xh200.png" />`
+**Returns:** `<img src="images/logo_w200xh200.png" />`
