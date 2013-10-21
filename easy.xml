@@ -24,6 +24,6 @@
 		]]>
 	</description>
   	<files>
-  		  <file>easyimage.php</file>
+  		  <file>image.php</file>
   	</files>
 </extension>

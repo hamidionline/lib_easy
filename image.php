@@ -34,13 +34,13 @@ Class EasyImage
     {
     	$absolutPath = JPath::clean(JPATH_ROOT.'/'.$relativePath);
 
-        if(!JFile::exists($absolutPath))
+        if (!JFile::exists($absolutPath))
         {
         	JError::raiseWarning( 100, 'Image Path "'.$relativePath.'" could not be saved. Only images can be uploaded as logo.' );
             return $relativePath;
         }
 
-        if($width || $height)
+        if ($width || $height)
         {
         	$imageExt = JFile::getExt($absolutPath);
         	$imageName = rtrim(JFile::getName($absolutPath), '.'.$imageExt);
@@ -48,7 +48,7 @@ Class EasyImage
         	$relativePathNew = str_replace($imageName.'.'.$imageExt, $imageNameNew.'.'.$imageExt, $relativePath);
         	$absolutPathNew = JPath::clean(JPATH_ROOT.'/'.$relativePathNew);
 
-        	if(JFile::exists($absolutPathNew))
+        	if (JFile::exists($absolutPathNew))
 	        {
 	            return $relativePathNew;
 	        }
