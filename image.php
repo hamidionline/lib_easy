@@ -16,7 +16,7 @@ jimport('joomla.image');
 /*
 *	Class for handeling images
 *
-*	Import it if you need it this way: jimport('easy.easyimage');
+*	Import it if you need it this way: jimport('easy.image');
 */
 Class EasyImage
 {
@@ -78,5 +78,21 @@ Class EasyImage
         }
         
         return $relativePath;
+    }
+
+    /*
+	*	Method for image upload.
+	*
+	*	Example usage: EasyImage::upload('logo', 200, 200);
+	*
+	*	@param 	string 	Input name of the image
+	*	@param 	string 	Absolut path to upload folder
+	*	@return string 	Absolut path to uploaded image
+	*	@since 	1.0.1
+	*/
+    static function upload($imageInputName, $uploadPath)
+    {
+    	jimport('easy.file');
+    	return EasyFile::upload($imageInputName, $uploadPath, array('jpg', 'jpeg', 'png', 'gif'));
     }
 }

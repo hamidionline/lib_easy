@@ -16,3 +16,23 @@ Automatic image resizing. Method checks if the image was already resized and dec
 **Example:** `<img src="<?php echo EasyImage::resize('images/logo.png', 200, 200) ?>" />`
 
 **Returns:** `<img src="images/logo_w200xh200.png" />`
+
+### Upload
+Safely upload an image.
+
+**Usage:** `$imagePath = EasyFile::upload($formFieldName, $absolutPathToUploadFolder);`
+
+**Example:** `$imagePath = EasyFile::upload('imageInput', JPATH::ROOT.'/images/stories/');`
+
+File
+------
+**Import:** `jimport('easy.file');`
+
+### Upload
+Safely upload a file.
+
+**Usage:** `$filePath = EasyFile::upload($formFieldName, $absolutPathToUploadFolder, $allowedFileExtensions);`
+
+**Example:** `$filePath = EasyFile::upload('fileInput', JPATH::ROOT.'/images/stories/', array('jpg', 'png'));`
+
+
