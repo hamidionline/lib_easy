@@ -44,7 +44,7 @@ Class EasyImage
         if ($width || $height)
         {
         	$imageExt = JFile::getExt($absolutPath);
-        	$imageName = rtrim(JFile::getName($absolutPath), '.'.$imageExt);
+        	$imageName = preg_replace('/\.'.$imageExt.'$/', '', JFile::getName($absolutPath));
         	$imageNameNew = $imageName.'_w'.$width.'xh'.$height;
         	$relativePathNew = str_replace($imageName.'.'.$imageExt, $imageNameNew.'.'.$imageExt, $relativePath);
         	$absolutPathNew = JPath::clean(JPATH_ROOT.'/'.$relativePathNew);
