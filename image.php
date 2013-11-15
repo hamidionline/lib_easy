@@ -56,6 +56,12 @@ Class EasyImage
 
         	$image = new JImage($absolutPath);
         	$properties = JImage::getImageFileProperties($absolutPath);
+
+        	if($properties->width < $width || $properties->height < $height)
+        	{
+        		return $relativePath;
+        	}
+
         	$resizedImage = $image->resize($width, $height, true);
         	$mime = $properties->mime;
 
