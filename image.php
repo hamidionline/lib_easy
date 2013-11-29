@@ -48,13 +48,18 @@ Class EasyImage
         	$imageNameNew = $imageName.'_w'.$width.'xh'.$height;
         	$relativePathNew = str_replace($imageName.'.'.$imageExt, $imageNameNew.'.'.$imageExt, $relativePath);
         	$absolutPathNew = JPath::clean(JPATH_ROOT.'/'.$relativePathNew);
-        	$imageDateOrigin = filemtime($absolutPath);
-        	$imageDateThumb = filemtime($absolutPathNew);
-        	$clearCache = ($imageDateOrigin > $imageDateThumb);
+        	
 
-        	if (JFile::exists($absolutPathNew) && $clearCache == false)
+        	if (JFile::exists($absolutPathNew))
 	        {
-	            return $relativePathNew;
+                $imageDateOrigin = filemtime($absolutPath);
+                $imageDateThumb = filemtime($absolutPathNew);
+                $clearCache = ($imageDateOrigin > $imageDateThumb);
+
+                if($clearCache == false)
+                {
+                    return $relativePathNew;
+                }
 	        }
 
         	$image = new JImage($absolutPath);
