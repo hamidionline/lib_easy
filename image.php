@@ -60,7 +60,7 @@ Class EasyImage
         	$image = new JImage($absolutPath);
         	$properties = JImage::getImageFileProperties($absolutPath);
 
-        	if($properties->width < $width || $properties->height < $height)
+        	if($properties->width < $width && $properties->height < $height)
         	{
         		return $relativePath;
         	}
