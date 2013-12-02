@@ -11,7 +11,8 @@ Image
 ### Resize
 Automatic image resizing. Method checks if the image was already resized and decides if it is necesary to resize it or just read already resized image. Source image stays the same. Thunbnail will be stored in the same folder as original.
 
-**Usage:** `echo EasyImage::resize($relativePath, $width, $height);`
+**Usage:** `echo EasyImage::resize($relativePath, $width, $height, $quantity);`
+($height and $quantity are optional)
 
 **Example:** `<img src="<?php echo EasyImage::resize('images/logo.png', 200, 200) ?>" />`
 
